@@ -6,7 +6,6 @@ export default () => {
     return (
         <div>
             <CommentBox />
-            <CommentList />
         </div>
     )
 };

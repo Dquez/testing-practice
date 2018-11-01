@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {saveComment, fetchComments} from "actions";
 import {connect} from "react-redux";
+import CommentList from "./CommentList";
 
 class CommentBox extends Component {
     state = {
@@ -21,18 +22,6 @@ class CommentBox extends Component {
         this.setState({comment: ""})
         this.props.saveComment(comment);
     }
-    // renderComments = () =>{ 
-    //     if(this.props.comments.length > 0){
-    //         return(
-    //             this.props.comments.map((comment,i)=>{
-    //                 return(
-    //                     <li key={i}>{comment}</li>
-    //                 )
-    //             })
-    //         ) 
-    //     }
-    //     return <div>No comments yet</div>
-    // }
     render(){
         return(
             <div>
@@ -44,9 +33,7 @@ class CommentBox extends Component {
                     </div>
                 </form>
                 <div>
-                    <ul>
-                        {/* {this.renderComments()} */}
-                    </ul>
+                    <CommentList />
                 </div>
             </div>
           
