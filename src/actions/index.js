@@ -4,11 +4,10 @@
 export const SAVE_COMMENT = 'SAVE_COMMENT';
 export const FETCH_COMMENTS = 'FETCH_COMMENTS';
 
-export function saveComment(comment, callback){
+export function saveComment(comment){
     return {
         type: SAVE_COMMENT,
         payload: comment,
-        callback
     }
 }
 

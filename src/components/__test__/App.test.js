@@ -8,7 +8,7 @@ let wrapped;
 beforeEach(() => {
     wrapped = shallow(<App />)   
 })
-it("shows a comment box and comment list", () =>{
+it("shows a comment box", () =>{
      
     //  wrapped.find(CommentBox) returns an array
      expect(wrapped.find(CommentBox).length).toEqual(1);

@@ -6,9 +6,9 @@ class CommentBox extends Component {
     state = {
         comment: ""
     }
-    componentDidMount(){
-        this.props.fetchComments();
-    }
+    // componentDidMount(){
+    //     this.props.fetchComments();
+    // }
     handleInputChange = (event) =>{
         const {value} = event.target;
         this.setState({
@@ -19,26 +19,24 @@ class CommentBox extends Component {
         event.preventDefault();
         const {comment} = this.state;
         this.setState({comment: ""})
-        this.props.saveComment(comment, ()=>{
-            console.log(this.props.comments);
-        });
+        this.props.saveComment(comment);
     }
-    renderComments = () =>{ 
-        if(this.props.comments.length > 0){
-            return(
-                this.props.comments.map((comment,i)=>{
-                    return(
-                        <li key={i}>{comment}</li>
-                    )
-                })
-            ) 
-        }
-        return <div>No comments yet</div>
-    }
+    // renderComments = () =>{ 
+    //     if(this.props.comments.length > 0){
+    //         return(
+    //             this.props.comments.map((comment,i)=>{
+    //                 return(
+    //                     <li key={i}>{comment}</li>
+    //                 )
+    //             })
+    //         ) 
+    //     }
+    //     return <div>No comments yet</div>
+    // }
     render(){
         return(
             <div>
-                <form  onSubmit={this.handleSubmit} className="form-group">
+                <form onSubmit={this.handleSubmit} className="form-group">
                     <h4>Add a comment</h4>
                     <textarea onChange={this.handleInputChange} value={this.state.comment}/>
                     <div>
@@ -47,7 +45,7 @@ class CommentBox extends Component {
                 </form>
                 <div>
                     <ul>
-                        {this.renderComments()}
+                        {/* {this.renderComments()} */}
                     </ul>
                 </div>
             </div>
@@ -59,9 +57,9 @@ class CommentBox extends Component {
 
 
 
-function mapStateToProps({comments}){
-    return {comments};
-  }
+// function mapStateToProps({comments}){
+//     return {comments};
+//   }
   
-  // getArticles is a destructured methods, now hooked up to redux and available as props
-  export default connect(mapStateToProps, {saveComment,fetchComments})(CommentBox);
+
+  export default connect(null, {saveComment,fetchComments})(CommentBox);
