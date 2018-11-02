@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-// import {fetchComments} from "actions";
 import {connect} from "react-redux";
 
 class CommentList extends Component {

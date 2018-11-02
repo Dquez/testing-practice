@@ -1,3 +1,4 @@
+import axios from "axios";
 // action creators always have to return an action, and actions always have to have a type property
 
 // variables to be imported and used in our reducers switch statement, instead of hard coding a string
@@ -12,7 +13,9 @@ export function saveComment(comment){
 }
 
 export function fetchComments(){
+    const request = axios.get("http://jsonplaceholder.typicode.com/comments")
     return {
-        type: FETCH_COMMENTS
+        type: FETCH_COMMENTS,
+        payload: request
     }
 }
