@@ -6,9 +6,6 @@ class CommentBox extends Component {
     state = {
         comment: ""
     }
-    // componentDidMount(){
-    //     this.props.fetchComments();
-    // }
     handleInputChange = (event) =>{
         const {value} = event.target;
         this.setState({
