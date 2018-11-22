@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-export default function (ChildComponent){
+export default function (ChildComponent){   
     class ComponsedComponent extends Component {
         // Component just got rendered
         componentDidMount(){
